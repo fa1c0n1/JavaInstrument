@@ -90,8 +90,11 @@ the specified paremeters.
 But I can't make this memshell eternal when the Springboot app process restarted.
 Because when the agent is attached into Springboot app, I have no idea how to obtain the Tomcat port in the `agentmain()` method.
 
-
 ## Reference：
 Inspired by rebeyond: <br>
 [1] https://www.cnblogs.com/rebeyond/p/9686213.html <br>
 [2] https://github.com/rebeyond/memShell
+
+
+# Note
+Just for learning and research only, and don't use for illegal purposes.
